@@ -90,3 +90,7 @@ install(TARGETS ${PROJECT_NAME}
 ament_package(
   CONFIG_EXTRAS "cmake/cv_bridge-extras.cmake.in"
 )
+
+if (MSVC)
+    target_compile_definitions(${PROJECT_NAME}_boost PRIVATE -DBOOST_PYTHON_STATIC_LIB)
+endif()
