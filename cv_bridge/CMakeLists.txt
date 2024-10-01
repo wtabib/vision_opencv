@@ -12,6 +12,8 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra)
 endif()
 
+add_compile_options(-DHAVE_SNPRINTF)
+
 if(ANDROID)
   find_package(Boost REQUIRED)
   set(boost_python_target "")
