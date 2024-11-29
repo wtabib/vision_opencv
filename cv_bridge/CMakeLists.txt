@@ -12,8 +12,6 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra)
 endif()
 
-add_compile_options(-DHAVE_SNPRINTF)
-
 if(ANDROID)
   find_package(Boost REQUIRED)
   set(boost_python_target "")
@@ -92,7 +90,3 @@ install(TARGETS ${PROJECT_NAME}
 ament_package(
   CONFIG_EXTRAS "cmake/cv_bridge-extras.cmake.in"
 )
-
-if (MSVC)
-    target_compile_definitions(${PROJECT_NAME}_boost PRIVATE -DBOOST_PYTHON_STATIC_LIB)
-endif()
