@@ -121,7 +121,7 @@ int getCvType(const std::string & encoding)
 /// @cond DOXYGEN_IGNORE
 
 enum Encoding { INVALID = -1, GRAY = 0, RGB, BGR, RGBA, BGRA, YUV422, YUV422_YUY2, BAYER_RGGB, BAYER_BGGR,
-  BAYER_GBRG, BAYER_GRBG};
+  BAYER_GBRG, BAYER_GRBG, MAX_ENCODING};
 
 Encoding getEncoding(const std::string & encoding)
 {
@@ -151,7 +151,7 @@ static const int SAME_FORMAT = -1;
 std::map<std::pair<Encoding, Encoding>, std::vector<int>> getConversionCodes()
 {
   std::map<std::pair<Encoding, Encoding>, std::vector<int>> res;
-  for (int i = 0; i <= 5; ++i) {
+  for (int i = 0; i < MAX_ENCODING; ++i) {
     res[std::pair<Encoding, Encoding>(Encoding(i), Encoding(i))].push_back(SAME_FORMAT);
   }
 
