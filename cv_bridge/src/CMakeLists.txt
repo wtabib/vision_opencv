@@ -33,6 +33,10 @@ if(NOT ANDROID)
     Python3::NumPy)
   target_compile_definitions(${PROJECT_NAME}_boost PRIVATE PYTHON3)
 
+  if (MSVC)
+    target_compile_definitions(${PROJECT_NAME}_boost PRIVATE -DBOOST_PYTHON_STATIC_LIB -DHAVE_SNPRINTF)
+  endif()
+
   if(OpenCV_VERSION_MAJOR VERSION_EQUAL 4)
     target_compile_definitions(${PROJECT_NAME}_boost PRIVATE OPENCV_VERSION_4)
   endif()
