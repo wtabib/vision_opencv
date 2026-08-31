@@ -27,6 +27,7 @@
   <depend>rcpputils</depend>
   <depend>sensor_msgs</depend>
   <depend>python3-opencv</depend>
+  <depend>opencv_colcon</depend>
 
   <exec_depend>ament_index_python</exec_depend>
   <exec_depend>libboost-python</exec_depend>
